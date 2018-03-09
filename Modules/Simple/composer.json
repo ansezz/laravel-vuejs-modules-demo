@@ -1,0 +1,25 @@
+{
+    "name": "ansezz/simple",
+    "description": "",
+    "authors": [
+        {
+            "name": "Anass Ez-zouaine",
+            "email": "ans-ezzouaine@hotmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Simple\\Providers\\SimpleServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Simple\\": ""
+        }
+    }
+}

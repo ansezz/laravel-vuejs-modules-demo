@@ -1,0 +1,11 @@
+<template>
+    <div>
+        <div id="nav">
+            <router-link :to="{name:'$LOWER_NAME$_home'}">Home</router-link>
+        </div>
+        <router-view/>
+    </div>
+</template>
+
+<style>
+</style>

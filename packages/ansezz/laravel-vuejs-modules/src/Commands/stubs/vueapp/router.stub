@@ -1,0 +1,18 @@
+import Home from './views/Home.vue'
+import App from './App.vue'
+
+
+export default [
+  {
+    path: '/$LOWER_NAME$',
+    component: App,
+    children: [
+      {
+        path: 'home',
+        name: '$LOWER_NAME$_home',
+        component: Home
+      }
+    ]
+  }
+]
+

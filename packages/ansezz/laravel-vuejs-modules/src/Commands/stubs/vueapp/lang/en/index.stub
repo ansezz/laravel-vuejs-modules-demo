@@ -1,0 +1,11 @@
+/*
+*
+* lang file en
+* $LOWER_NAME$
+*
+*/
+export default {
+  message: {
+    hello: 'Good morning $LOWER_NAME$ Module'
+  }
+}
