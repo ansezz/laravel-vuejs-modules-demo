@@ -1,0 +1,11 @@
+{
+  "presets": [
+    [ "env", {"modules": false} ],
+    "stage-2"
+  ],
+  "ignore": [
+    "*.php"
+  ],
+  "plugins": ["transform-runtime" , "syntax-dynamic-import"],
+  "comments": false
+}
