@@ -30,7 +30,7 @@ module.exports = function (ctx) {
       // extractCSS: false,
       // useNotifier: false,
       publicPath: '/',
-      htmlFilename: './../../resources/views/index.blade.php',
+      htmlFilename: './../resources/views/index.blade.php',
       distDir: './../public/',
       extendWebpack(cfg) {
         cfg.module.rules.push({
