@@ -36,3 +36,9 @@ src/router/routes.js
 src/statics/
 src/store/
 yarn.lock
+/resources/views/index.blade.php
+public/app.*.css
+public/js
+public/img
+public/fonts
+public/statics
