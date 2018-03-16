@@ -1,0 +1,15 @@
+<template>
+    <section>
+        <h1>Index $LOWER_NAME$</h1>
+        <p>{{$t('$LOWER_NAME$.success')}}</p>
+    </section>
+</template>
+
+<style>
+</style>
+
+<script>
+  export default {
+    name: 'PageIndex-$LOWER_NAME$'
+  }
+</script>

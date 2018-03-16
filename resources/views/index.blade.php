@@ -1,17 +1,1 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="shortcut icon" href="/assets/favicon.ico">
-    <title>Laravel</title>
-<link rel="preload" as="script" href="/assets/js/vendor.aa84dd3d.js">
-<link rel="preload" as="script" href="/assets/js/app.433dc681.js">
-<link rel="preload" as="style" href="/assets/css/app.05331d75.css">
-<link href="/assets/css/app.05331d75.css" rel="stylesheet"></head>
-<body>
-<div id="app"></div>
-<script type="text/javascript">(function(r){var e=window["webpackJsonp"];window["webpackJsonp"]=function(n,u,c){for(var i,f,p,a=0,l=[];a<n.length;a++)f=n[a],t[f]&&l.push(t[f][0]),t[f]=0;for(i in u)Object.prototype.hasOwnProperty.call(u,i)&&(r[i]=u[i]);e&&e(n,u,c);while(l.length)l.shift()();if(c)for(a=0;a<c.length;a++)p=o(o.s=c[a]);return p};var n={},t={2:0};function o(e){if(n[e])return n[e].exports;var t=n[e]={i:e,l:!1,exports:{}};return r[e].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=n,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{configurable:!1,enumerable:!0,get:n})},o.n=function(r){var e=r&&r.__esModule?function(){return r["default"]}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="/assets/",o.oe=function(r){throw console.error(r),r}})([]);
-//# sourceMappingURL=/assets/js/manifest.c6cb2272.js.map</script><script type="text/javascript" src="/assets/js/vendor.aa84dd3d.js"></script><script type="text/javascript" src="/assets/js/app.433dc681.js"></script></body>
-</html>
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=format-detection content="telephone=no"><meta name=msapplication-tap-highlight content=no><meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><title>Quasar App</title><base href=/assets/ ><link rel=icon href=statics/quasar-logo.png type=image/x-icon><link rel=icon type=image/png sizes=32x32 href=statics/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=statics/icons/favicon-16x16.png><link rel=prefetch href=js/0.dd4121eedd347c127074.js as=script><link rel=prefetch href=js/1.666929eb266295877184.js as=script><link rel=prefetch href=js/2.da9a9a69d328a433f0b1.js as=script><link rel=preload href=js/vendor.80d4b262f2ab13cd2900.js as=script><link rel=preload href=js/app.cc0c7e6564e98dd66b3b.js as=script><link rel=preload href=app.5eb7bf86b07f4e79260dc69b156612eb.css as=style><link rel=preload href=js/manifest.9c822ab045407c9418d1.js as=script><link href=/assets/app.5eb7bf86b07f4e79260dc69b156612eb.css rel=stylesheet></head><body><noscript>This is your fallback content in case JavaScript fails to load.</noscript><div id=q-app></div><script type=text/javascript src=/assets/js/manifest.9c822ab045407c9418d1.js></script><script type=text/javascript src=/assets/js/vendor.80d4b262f2ab13cd2900.js></script><script type=text/javascript src=/assets/js/app.cc0c7e6564e98dd66b3b.js></script></body></html>

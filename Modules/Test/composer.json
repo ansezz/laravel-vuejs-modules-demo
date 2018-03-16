@@ -1,0 +1,25 @@
+{
+    "name": "ansezz/test",
+    "description": "",
+    "authors": [
+        {
+            "name": "Anass Ez-zouaine",
+            "email": "ans-ezzouaine@hotmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Test\\Providers\\TestServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Test\\": ""
+        }
+    }
+}

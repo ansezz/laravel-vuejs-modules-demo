@@ -1,0 +1,18 @@
+<template>
+    <main>
+        <router-view/>
+    </main>
+</template>
+
+<script>
+  export default {
+    name: 'LayoutDefault-$LOWER_NAME$',
+    data () {
+      return {}
+    },
+    methods: {}
+  }
+</script>
+
+<style>
+</style>
