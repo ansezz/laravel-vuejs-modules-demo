@@ -2,9 +2,12 @@ import _ from 'lodash'
 
 const moduleFolder = 'Modules'
 const vueAppFolder = 'vueapp'
+/*
+*Modules list
+*/
 const Modules = [
   {name: 'Simple', enabled: true, folder: 'Simple', layout: 'default'},
-  {name: 'NewsLetter', enabled: true, folder: 'NewsLetter', layout: 'default'},
+  {name: 'NewsLetter', enabled: true, folder: 'NewsLetter', layout: 'admin'},
   {name: 'Test', enabled: true, folder: 'Test', layout: 'default'}
 ]
 

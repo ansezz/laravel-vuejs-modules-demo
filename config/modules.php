@@ -67,6 +67,7 @@ return [
             'views/index' => ['LOWER_NAME'],
             'views/master' => ['STUDLY_NAME'],
 
+            'vueapp/App' => ['LOWER_NAME', 'STUDLY_NAME'],
             'vueapp/.eslintrc' => ['LOWER_NAME', 'STUDLY_NAME'],
             'vueapp/i18n/index' => ['LOWER_NAME', 'STUDLY_NAME'],
             'vueapp/i18n/en/index' => ['LOWER_NAME', 'STUDLY_NAME'],

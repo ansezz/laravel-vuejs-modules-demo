@@ -10,6 +10,14 @@ let routes = [
       {path: '', component: () => import('pages/index')}
     ]
   },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('layouts/admin'),
+    children: [
+      {path: '', component: () => import('pages/index')}
+    ]
+  },
 
   { // Always leave this as last one
     path: '*',
