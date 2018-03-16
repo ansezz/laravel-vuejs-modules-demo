@@ -1,6 +1,8 @@
 import _ from 'lodash'
 
-let Modules = [
+const moduleFolder = 'Modules'
+const vueAppFolder = 'vueapp'
+const Modules = [
   {name: 'Simple', enabled: true, folder: 'Simple', layout: 'default'},
   {name: 'NewsLetter', enabled: true, folder: 'NewsLetter', layout: 'default'},
   {name: 'Test', enabled: true, folder: 'Test', layout: 'default'}
@@ -8,37 +10,42 @@ let Modules = [
 
 let routesModules = []
 _.forEach(Modules, function (module) {
-  let file = './Modules/' + module.folder + '/vueapp/router/routes.js'
-  let x = require(`${file}`)
+  if (module.enabled) {
+    let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/router/routes.js'
+    let obj = require(`${filePath}`)
 
-  if (!module.layout) {
-    module.layout = 'default'
-  }
+    if (!module.layout) {
+      module.layout = 'default'
+    }
 
-  if (!routesModules[module.layout]) {
-    routesModules[module.layout] = []
+    if (!routesModules[module.layout]) {
+      routesModules[module.layout] = []
+    }
+    routesModules[module.layout].push(obj.default)
   }
-  routesModules[module.layout].push(x.default)
 })
 
 let i18nModules = []
 _.forEach(Modules, function (module) {
-  let file = './Modules/' + module.folder + '/vueapp/i18n/index.js'
-  let x = require(`${file}`)
-  _.forEach(x.default, function (item, lang) {
-    if (!i18nModules[lang]) {
-      i18nModules[lang] = []
-    }
-    i18nModules[lang][module.name.toLowerCase()] = item
-  })
+  if (module.enabled) {
+    let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/i18n/index.js'
+    let obj = require(`${filePath}`)
+    _.forEach(obj.default, function (item, lang) {
+      if (!i18nModules[lang]) {
+        i18nModules[lang] = []
+      }
+      i18nModules[lang][module.name.toLowerCase()] = item
+    })
+  }
 })
-console.log(i18nModules)
 
 let storeModules = []
 _.forEach(Modules, function (module) {
-  let file = './Modules/' + module.folder + '/vueapp/store/index.js'
-  let x = require(`${file}`)
-  storeModules[module.name.toLowerCase()] = x.default
+  if (module.enabled) {
+    let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/store/index.js'
+    let obj = require(`${filePath}`)
+    storeModules[module.name.toLowerCase()] = obj.default
+  }
 })
 
 export {
