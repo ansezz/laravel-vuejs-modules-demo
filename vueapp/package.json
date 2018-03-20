@@ -1,9 +1,9 @@
 {
   "name": "vueapp",
-  "version": "1.0.0",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
-  "cordovaId": "com.laravel-vuejs.com.modules",
+  "version": "1.0.1",
+  "description": "Laravel VueJs Modules",
+  "productName": "Laravel VueJs Modules",
+  "cordovaId": "com.laravelvuejs.com.modules",
   "author": "ANASS EZ-ZOUAINE <ans-ezzouaine@hotmail.com>",
   "private": true,
   "scripts": {

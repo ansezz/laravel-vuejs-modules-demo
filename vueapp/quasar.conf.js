@@ -25,6 +25,7 @@ module.exports = function (ctx) {
     build: {
       scopeHoisting: true,
       vueRouterMode: 'history',
+      productName: 'Laravel VueJs Modules',
       // gzip: true,
       // analyze: true,
       // extractCSS: false,
@@ -32,7 +33,7 @@ module.exports = function (ctx) {
       publicPath: '/',
       htmlFilename: './../resources/views/index.blade.php',
       distDir: './../public/',
-      extendWebpack(cfg) {
+      extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -43,10 +44,10 @@ module.exports = function (ctx) {
           test: /\.(php)$/,
           loader: 'ignore-loader'
         })
-        cfg.module.rules.push({
+        /*cfg.module.rules.push({
           test: /\.(html)$/,
           loader: 'html-loader'
-        })
+        })*/
         // cfg.context = path.resolve(__dirname, './src')
         // cfg.resolve.alias['@'] = path.resolve(__dirname, './src')
         // cfg.resolve.modules.push(path.resolve(__dirname, './Modules'))
@@ -140,7 +141,7 @@ module.exports = function (ctx) {
       // id: 'org.cordova.quasar.app'
     },
     electron: {
-      extendWebpack(cfg) {
+      extendWebpack (cfg) {
         // do something with cfg
       },
       packager: {
