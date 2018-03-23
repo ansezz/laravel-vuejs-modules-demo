@@ -4,8 +4,8 @@ import _ from 'lodash'
 let routes = [
   {
     path: '/',
-    name: 'default',
-    component: () => import('layouts/default'),
+    name: 'blog',
+    component: () => import('layouts/blog'),
     children: [
       {path: '', component: () => import('pages/index')}
     ]
@@ -18,7 +18,14 @@ let routes = [
       {path: '', component: () => import('pages/index')}
     ]
   },
-
+  {
+    path: '/auth',
+    name: 'auth',
+    component: () => import('layouts/auth'),
+    children: [
+      {path: '', component: () => import('pages/index')}
+    ]
+  },
   { // Always leave this as last one
     path: '*',
     component: () => import('pages/404')

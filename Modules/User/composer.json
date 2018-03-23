@@ -1,0 +1,25 @@
+{
+  "name": "ansezz/user",
+  "license": "",
+  "description": "",
+  "authors": [
+    {
+      "name": "Anass Ez-zouaine",
+      "email": "ans-ezzouaine@hotmail.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\User\\Providers\\UserServiceProvider"
+      ],
+      "aliases": {
+      }
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\User\\": ""
+    }
+  }
+}

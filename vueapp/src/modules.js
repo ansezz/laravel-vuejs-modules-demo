@@ -5,12 +5,8 @@ const vueAppFolder = 'vueapp'
 /*
 *Modules list
 */
-const Modules = [
-  {name: 'Simple', enabled: true, folder: 'Simple', layout: 'default'},
-  {name: 'NewsLetter', enabled: true, folder: 'NewsLetter', layout: 'admin'},
-  {name: 'Test', enabled: true, folder: 'Test', layout: 'default'}
-]
-
+const Modules = require('./../modules')
+console.log(Modules)
 let routesModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {

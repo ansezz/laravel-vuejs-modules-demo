@@ -1,0 +1,25 @@
+{
+    "name": "ansezz/auth",
+    "description": "",
+    "authors": [
+        {
+            "name": "Anass Ez-zouaine",
+            "email": "ans-ezzouaine@hotmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Auth\\Providers\\AuthServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Auth\\": ""
+        }
+    }
+}

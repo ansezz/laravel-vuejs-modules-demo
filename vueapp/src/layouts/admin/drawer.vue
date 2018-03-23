@@ -12,13 +12,7 @@
         <router-link to="/">Home</router-link>
       </q-item>
       <q-item>
-        <router-link to="/simple">Simple</router-link>
-      </q-item>
-      <q-item>
-        <router-link to="/newsletter">NewsLetter</router-link>
-      </q-item>
-      <q-item>
-        <router-link to="/test">Test</router-link>
+        <router-link to="/user">User</router-link>
       </q-item>
       <q-item>
         <router-link to="/not-found">404</router-link>
