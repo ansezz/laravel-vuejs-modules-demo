@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h1>{{$t('user.addNewUser')}}</h1>
+        <h1>{{$t('users.addNewUser')}}</h1>
         <p>
             FORM
         </p>

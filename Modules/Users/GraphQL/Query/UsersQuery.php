@@ -8,7 +8,7 @@ use GraphQL\Type\Definition\Type;
 use GraphQL;
 use Modules\User\Entities\User;
 
-class UserQuery extends Query
+class UsersQuery extends Query
 {
     protected $attributes = [
         'name' => 'UserQuery',

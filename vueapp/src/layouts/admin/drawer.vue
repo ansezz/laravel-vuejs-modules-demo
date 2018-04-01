@@ -12,7 +12,7 @@
                 <router-link to="/">Home</router-link>
             </q-item>
             <q-item>
-                <router-link :to="{name:'user.index'}">User</router-link>
+                <router-link :to="{name:'users.index'}">User</router-link>
             </q-item>
             <q-item>
                 <router-link to="/not-found">404</router-link>

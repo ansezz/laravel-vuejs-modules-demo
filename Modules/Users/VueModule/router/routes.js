@@ -1,13 +1,13 @@
 export default [
   {
-    path: 'user',
+    path: 'users',
     component: () => import('../layouts/default'),
     children: [
       {
-        path: '', name: 'user.index', component: () => import('../pages/index')
+        path: '', name: 'users.index', component: () => import('../pages/index')
       },
       {
-        path: 'create', name: 'user.create', component: () => import('../pages/create')
+        path: 'create', name: 'users.create', component: () => import('../pages/create')
       },
       { // Always leave this as last one
         path: '*',

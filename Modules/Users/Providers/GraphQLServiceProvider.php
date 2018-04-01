@@ -5,7 +5,7 @@ namespace Modules\User\Providers;
 use GraphQL;
 use Illuminate\Support\ServiceProvider;
 use Modules\User\GraphQL\Mutation\CreateUserMutation;
-use Modules\User\GraphQL\Query\UserQuery;
+use Modules\User\GraphQL\Query\UsersQuery;
 use Modules\User\GraphQL\Type\UserType;
 
 class GraphQLServiceProvider extends ServiceProvider
@@ -31,7 +31,7 @@ class GraphQLServiceProvider extends ServiceProvider
 
         GraphQL::addSchema('default', [
             'query' => [
-                'user' => UserQuery::class
+                'user' => UsersQuery::class
             ],
             'mutation' => [
                 'createUser' => CreateUserMutation::class

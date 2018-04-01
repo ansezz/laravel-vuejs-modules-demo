@@ -5,9 +5,9 @@
     "folder": "Hello"
   },
   {
-    "name": "User",
+    "name": "Users",
     "enabled": true,
-    "folder": "User",
+    "folder": "Users",
     "layout": "admin"
   }
 ]
