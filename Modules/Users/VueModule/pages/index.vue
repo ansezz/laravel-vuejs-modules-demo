@@ -14,7 +14,7 @@
         <h2>LIST</h2>
         <ul>
             <li v-for="item in users" :key="item.id">
-                <strong>{{item.name}} </strong>|
+                <i>[{{item.login}}] </i> | <strong> {{item.name}} </strong>|
                 <small>{{item.email}}</small>
             </li>
         </ul>
