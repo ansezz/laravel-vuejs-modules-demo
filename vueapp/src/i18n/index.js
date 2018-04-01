@@ -10,7 +10,6 @@ let messages = {
 }
 
 _.forEach(messages, function (item, key) {
-  console.log(item, key)
   Object.assign(item, i18nModules[key])
 })
 

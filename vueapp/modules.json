@@ -1,15 +1,8 @@
 [
   {
-    "name": "Auth",
+    "name": "Hello",
     "enabled": true,
-    "folder": "Auth",
-    "layout": "auth"
-  },
-  {
-    "name": "Blog",
-    "enabled": true,
-    "folder": "Blog",
-    "layout": "blog"
+    "folder": "Hello"
   },
   {
     "name": "User",

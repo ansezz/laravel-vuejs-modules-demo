@@ -3,38 +3,23 @@ import _ from 'lodash'
 
 let routes = [
   {
-    path: '/',
-    name: 'blog',
-    component: () => import('layouts/blog'),
-    children: [
-      {path: '', component: () => import('pages/index')}
-    ]
-  },
-  {
     path: '/admin',
-    name: 'admin',
+    meta: {layout: 'admin', requiresAuth: true},
     component: () => import('layouts/admin'),
     children: [
-      {path: '', component: () => import('pages/index')}
-    ]
-  },
-  {
-    path: '/auth',
-    name: 'auth',
-    component: () => import('layouts/auth'),
-    children: [
-      {path: '', component: () => import('pages/index')}
+      {path: '', name: 'admin.index', component: () => import('pages/index')}
     ]
   },
   { // Always leave this as last one
     path: '*',
-    component: () => import('pages/404')
+    component: () => import('pages/404'),
+    meta: {}
   }
 ]
 
 _.forEach(routes, function (route) {
-  if (routesModules[route.name]) {
-    _.forEach(routesModules[route.name], function (mroutes) {
+  if (routesModules[route.meta.layout]) {
+    _.forEach(routesModules[route.meta.layout], function (mroutes) {
       route.children = _.concat(route.children, mroutes)
     })
   }

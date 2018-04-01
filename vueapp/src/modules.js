@@ -1,22 +1,20 @@
 import _ from 'lodash'
 
 const moduleFolder = 'Modules'
-const vueAppFolder = 'vueapp'
+const vueAppFolder = 'VueModule'
 /*
 *Modules list
 */
 const Modules = require('./../modules')
-console.log(Modules)
+
 let routesModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
     let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/router/routes.js'
     let obj = require(`${filePath}`)
-
     if (!module.layout) {
       module.layout = 'default'
     }
-
     if (!routesModules[module.layout]) {
       routesModules[module.layout] = []
     }

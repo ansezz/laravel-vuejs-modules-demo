@@ -1,11 +1,11 @@
-let path = require('path')
 // Configuration for your app
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
       'i18n',
-      'axios'
+      'axios',
+      'apollo'
     ],
     css: [
       'app.styl'
@@ -23,6 +23,13 @@ module.exports = function (ctx) {
       remove: []
     },
     build: {
+      env: ctx.dev ? {
+        GRAPHQL_URL: JSON.stringify('http://fundev.xx/graphql'),
+        API_URL: JSON.stringify('http://fundev.xx/api')
+      } : { // and on build (production):
+        GRAPHQL_URL: JSON.stringify('http://fundev.xx/graphql'),
+        API_URL: JSON.stringify('http://fundev.xx/api')
+      },
       scopeHoisting: true,
       vueRouterMode: 'history',
       productName: 'Laravel VueJs Modules',
@@ -44,10 +51,10 @@ module.exports = function (ctx) {
           test: /\.(php)$/,
           loader: 'ignore-loader'
         })
-        /*cfg.module.rules.push({
+        /* cfg.module.rules.push({
           test: /\.(html)$/,
           loader: 'html-loader'
-        })*/
+        }) */
         // cfg.context = path.resolve(__dirname, './src')
         // cfg.resolve.alias['@'] = path.resolve(__dirname, './src')
         // cfg.resolve.modules.push(path.resolve(__dirname, './Modules'))
@@ -150,12 +157,10 @@ module.exports = function (ctx) {
         // appCategoryType: '',
         // osxSign: '',
         // protocol: 'myapp://path',
-
         // Window only
         // win32metadata: { ... }
       }
     },
-
     // leave this here for Quasar CLI
     starterKit: '1.0.0'
   }

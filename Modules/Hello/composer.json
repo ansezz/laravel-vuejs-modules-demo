@@ -1,0 +1,25 @@
+{
+  "name": "ansezz/hello",
+  "license": "",
+  "description": "",
+  "authors": [
+    {
+      "name": "Anass Ez-zouaine",
+      "email": "ans-ezzouaine@hotmail.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\Hello\\Providers\\HelloServiceProvider"
+      ],
+      "aliases": {
+      }
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\Hello\\": ""
+    }
+  }
+}
