@@ -35,6 +35,8 @@ class CreateUserMutation extends Mutation
         return [
             'email' => 'required|email|unique:users',
             'name' => 'required|min:2',
+            'display_name' => 'required|min:2',
+            'login' => 'required|min:2',
             'password' => 'required|min:6'
         ];
     }
@@ -44,6 +46,8 @@ class CreateUserMutation extends Mutation
         return [
             'name' => ['name' => 'name', 'type' => Type::string()],
             'email' => ['name' => 'email', 'type' => Type::string()],
+            'login' => ['name' => 'login', 'type' => Type::string()],
+            'display_name' => ['name' => 'display_name', 'type' => Type::string()],
             'password' => ['name' => 'password', 'type' => Type::string()]
         ];
     }

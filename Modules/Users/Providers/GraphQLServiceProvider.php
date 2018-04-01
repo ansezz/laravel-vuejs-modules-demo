@@ -31,7 +31,7 @@ class GraphQLServiceProvider extends ServiceProvider
 
         GraphQL::addSchema('default', [
             'query' => [
-                'users' => UsersQuery::class
+                'users' => UsersQuery::class,
             ],
             'mutation' => [
                 'createUser' => CreateUserMutation::class

@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('name', 100);
             $table->string('display_name', 100);
-            $table->string('url', 100);
-            $table->tinyInteger('status');
+            $table->string('url', 100)->nullable();
+            $table->tinyInteger('status')->default(0);
 
             $table->rememberToken();
             $table->timestamps();
