@@ -7,9 +7,20 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
 use Modules\User\Entities\User;
+use Modules\User\Repositories\UserRepository;
 
 class UsersQuery extends Query
 {
+
+
+    protected $repository;
+
+    public function __construct(UserRepository $repository)
+    {
+        parent::__construct();
+        $this->repository = $repository;
+    }
+
     protected $attributes = [
         'name' => 'UserQuery',
         'description' => 'A query'
@@ -40,20 +51,19 @@ class UsersQuery extends Query
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
-        $user = new User();
 
         if (isset($args['id'])) {
-            $user = $user->where('id', $args['id']);
+            $this->repository->findByField('id', $args['id']);
         }
 
         if (isset($args['email'])) {
-            $user = $user->where('email', $args['email']);
+            $this->repository->findByField('email', $args['email']);
         }
 
         if (isset($args['login'])) {
-            $user = $user->where('login', $args['login']);
+            $this->repository->findByField('login', $args['login']);
         }
 
-        return $user->get();
+        return $this->repository->get();
     }
 }

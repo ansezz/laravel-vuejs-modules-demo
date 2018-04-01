@@ -6,9 +6,19 @@ use Folklore\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
+use Modules\User\Repositories\UserRepository;
 
 class CreateUserMutation extends Mutation
 {
+    protected $repository;
+
+    public function __construct(UserRepository $repository)
+    {
+        parent::__construct();
+        $this->repository = $repository;
+    }
+
+
     protected $attributes = [
         'name' => 'CreateUserMutation',
         'description' => 'A mutation'
@@ -40,7 +50,7 @@ class CreateUserMutation extends Mutation
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
-        return User::create($args);
+        return $this->repository->create($args);
     }
 
 }
