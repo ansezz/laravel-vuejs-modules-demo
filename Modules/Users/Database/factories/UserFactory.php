@@ -6,7 +6,7 @@ $factory->define(\Modules\User\Entities\User::class, function (Faker $faker) {
     return [
         'login' => $faker->userName,
         'email' => $faker->email,
-        'password' => $faker->password,
+        'password' => bcrypt('password'),
         'name' => $faker->name,
         'display_name' => $faker->name,
         'url' => $faker->url,

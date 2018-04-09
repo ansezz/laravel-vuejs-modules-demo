@@ -2,7 +2,9 @@
 
 namespace Modules\User\Entities;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -11,9 +13,10 @@ use Prettus\Repository\Traits\TransformableTrait;
  *
  * @package namespace App\Entities;
  */
-class User extends Model implements Transformable
+class User extends Authenticatable implements Transformable
 {
-    use TransformableTrait;
+    use TransformableTrait, HasApiTokens, Notifiable;
+
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +25,14 @@ class User extends Model implements Transformable
      */
     protected $fillable = ['name', 'email', 'password', 'login', 'display_name'];
 
-    protected $hidden = ['password'];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
 }

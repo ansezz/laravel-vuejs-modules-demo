@@ -15,6 +15,9 @@
                 <router-link :to="{name:'users.index'}">User</router-link>
             </q-item>
             <q-item>
+                <router-link :to="{name:'auth.login'}">Login</router-link>
+            </q-item>
+            <q-item>
                 <router-link to="/not-found">404</router-link>
             </q-item>
             <q-item @click.native="change()">
