@@ -1,0 +1,59 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.69])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+
+# Checks for programs.
+AC_PROG_AWK
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+
+# Checks for libraries.
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_CONFIG_FILES([node_modules/@babel/traverse/node_modules/debug/Makefile
+                 node_modules/array-includes/Makefile
+                 node_modules/batch/Makefile
+                 node_modules/coa/GNUmakefile
+                 node_modules/consolidate/Makefile
+                 node_modules/debug/Makefile
+                 node_modules/delayed-stream/Makefile
+                 node_modules/electron-packager/node_modules/debug/Makefile
+                 node_modules/electron-packager/node_modules/electron-download/node_modules/debug/Makefile
+                 node_modules/electron-packager/node_modules/sumchecker/node_modules/debug/Makefile
+                 node_modules/elementtree/Makefile
+                 node_modules/es-abstract/Makefile
+                 node_modules/es-to-primitive/Makefile
+                 node_modules/eslint/node_modules/debug/Makefile
+                 node_modules/extsprintf/Makefile
+                 node_modules/follow-redirects/node_modules/debug/Makefile
+                 node_modules/foreach/Makefile
+                 node_modules/indexof/Makefile
+                 node_modules/is-callable/Makefile
+                 node_modules/is-date-object/Makefile
+                 node_modules/is-regex/Makefile
+                 node_modules/is-symbol/Makefile
+                 node_modules/isarray/Makefile
+                 node_modules/json-stringify-safe/Makefile
+                 node_modules/plist/Makefile
+                 node_modules/progress-bar-webpack-plugin/node_modules/progress/Makefile
+                 node_modules/progress-stream/node_modules/xtend/Makefile
+                 node_modules/progress/Makefile
+                 node_modules/sockjs/Makefile
+                 node_modules/stylus/node_modules/debug/Makefile
+                 node_modules/svgo/Makefile
+                 node_modules/sw-precache-webpack-plugin/Makefile
+                 node_modules/throttleit/Makefile
+                 node_modules/toposort/Makefile
+                 node_modules/verror/node_modules/extsprintf/Makefile
+                 node_modules/vue-eslint-parser/node_modules/debug/Makefile
+                 node_modules/webpack-dev-server/node_modules/debug/Makefile
+                 node_modules/xtend/Makefile])
+AC_OUTPUT

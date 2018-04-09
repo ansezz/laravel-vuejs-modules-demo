@@ -4,6 +4,7 @@ namespace Modules\User\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Laravel\Passport\Passport;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,9 @@ class UserServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         $this->registerRepositories();
         $this->registerGraphql();
+
+        Passport::routes();
+
     }
 
     /**

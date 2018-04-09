@@ -19,6 +19,6 @@ public/img
 public/fonts
 public/statics
 public/manifest.json
-public/service-worker.
+public/service-worker.js
 
 vueapp/src/Modules
