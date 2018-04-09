@@ -6,7 +6,6 @@ use Folklore\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
-use Modules\User\Entities\User;
 use Modules\User\Repositories\UserRepository;
 
 class UsersQuery extends Query

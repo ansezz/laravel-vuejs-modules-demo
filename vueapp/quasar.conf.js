@@ -24,10 +24,10 @@ module.exports = function (ctx) {
     },
     build: {
       env: ctx.dev ? {
-        GRAPHQL_URL: JSON.stringify('http://fundev.xx/graphql'),
+        GRAPHQL_URL: JSON.stringify('http://fundev.xx/graphql/auth:api'),
         API_URL: JSON.stringify('http://fundev.xx/api')
       } : { // and on build (production):
-        GRAPHQL_URL: JSON.stringify('http://fundev.xx/graphql'),
+        GRAPHQL_URL: JSON.stringify('http://fundev.xx/graphql/auth:api'),
         API_URL: JSON.stringify('http://fundev.xx/api')
       },
       scopeHoisting: true,
@@ -93,7 +93,9 @@ module.exports = function (ctx) {
         'QListHeader',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QInput',
+        'QCheckbox'
       ],
       directives: [
         'Ripple'

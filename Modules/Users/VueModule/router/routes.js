@@ -1,5 +1,13 @@
 export default [
   {
+    path: 'auth',
+    component: () => import('../layouts/auth'),
+    children: [
+      {
+        path: 'login', name: 'auth.login', component: () => import('../pages/auth/Login')
+      }
+    ]
+  }, {
     path: 'users',
     component: () => import('../layouts/default'),
     children: [
