@@ -27,11 +27,9 @@ module.exports = {
   'rules': {
     // allow async-await
     'generator-star-spacing': 'off',
-    
     // allow paren-less arrow functions
     'arrow-parens': 0,
     'one-var': 0,
-    
     'import/first': 0,
     'import/named': 2,
     'import/namespace': 2,
@@ -40,7 +38,6 @@ module.exports = {
     'import/extensions': 0,
     'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': 0,
-    
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'indent': ['off', 2]

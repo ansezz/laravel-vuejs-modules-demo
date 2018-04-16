@@ -1,46 +1,54 @@
 // import something here
-import {GRAPHQL_URL} from '../config/index'
+import {GRAPHQL_URL, AUTH_TOKEN, GRAPHQL_AUTH_URL} from '../config/index'
 import {ApolloClient} from 'apollo-client'
 import {HttpLink} from 'apollo-link-http'
+import {ApolloLink, concat} from 'apollo-link'
 import {InMemoryCache} from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
-import {setContext} from 'apollo-link-context'
 
 const httpLink = new HttpLink({
-  // You should use an absolute URL here
   uri: GRAPHQL_URL
 })
-
-// get the authentication token from local storage if it exists
-// const token = localStorage.getItem('authToken')
-let token = localStorage.getItem('authToken')
-
-/**
- * Helper method to set the header with the token
- */
-export function setToken (newToken) {
-  token = newToken
-}
-
-const authLink = setContext((_, {headers}) => {
-  // return the headers to the context so httpLink can read them
-  return {
+const httpAuthLink = new HttpLink({
+  uri: GRAPHQL_AUTH_URL
+})
+const authMiddleware = new ApolloLink((operation, forward) => {
+  // add the authorization to the headers
+  operation.setContext({
     headers: {
-      ...headers,
-      authorization: token ? 'Bearer ' + token : null
+      accept: 'application/json',
+      authorization: 'Bearer ' + localStorage.getItem(AUTH_TOKEN) || null
     }
-  }
+  })
+  return forward(operation)
 })
 
 // Create the apollo client
 const apolloClient = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: httpLink,
+  cache: new InMemoryCache(),
+  connectToDevTools: true
+})
+
+const apolloAuthClient = new ApolloClient({
+  link: concat(authMiddleware, httpAuthLink),
   cache: new InMemoryCache(),
   connectToDevTools: true
 })
 
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient
+  clients: {
+    'default': apolloClient,
+    'auth': apolloAuthClient
+  },
+  defaultClient: apolloClient,
+  defaultOptions: {
+    $loadingKey: 'loading'
+  },
+  errorHandler (error) {
+    console.log('Global error handler')
+    console.error(error)
+  }
 })
 
 // leave the export, even if you don't use it

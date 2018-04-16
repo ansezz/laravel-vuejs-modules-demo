@@ -1,7 +1,7 @@
 [
   {
     "name": "Hello",
-    "enabled": true,
+    "enabled": false,
     "folder": "Hello"
   },
   {

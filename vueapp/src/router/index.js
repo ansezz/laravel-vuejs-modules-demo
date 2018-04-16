@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import beforeEach from './beforeEach'
 
 import routes from './routes'
 
@@ -19,5 +20,12 @@ const Router = new VueRouter({
   scrollBehavior: () => ({y: 0}),
   routes
 })
+
+/**
+ * Before a route is resolved we check for
+ * the token if the route is marked as
+ * requireAuth.
+ */
+Router.beforeEach(beforeEach)
 
 export default Router

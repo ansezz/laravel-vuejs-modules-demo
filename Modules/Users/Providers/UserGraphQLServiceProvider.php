@@ -5,11 +5,11 @@ namespace Modules\User\Providers;
 use GraphQL;
 use Illuminate\Support\ServiceProvider;
 use Modules\User\GraphQL\Mutation\CreateUserMutation;
-use Modules\User\GraphQL\Query\LoginQuery;
+use Modules\User\GraphQL\Mutation\LoginUserMutation;
 use Modules\User\GraphQL\Query\UsersQuery;
 use Modules\User\GraphQL\Type\UserType;
 
-class GraphQLServiceProvider extends ServiceProvider
+class UserGraphQLServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -30,7 +30,7 @@ class GraphQLServiceProvider extends ServiceProvider
     {
         GraphQL::addType(UserType::class, 'User');
 
-        GraphQL::addSchema('auth:api', [
+        GraphQL::addSchema('auth', [
             'query' => [
                 'users' => UsersQuery::class
             ],
@@ -41,9 +41,9 @@ class GraphQLServiceProvider extends ServiceProvider
 
         GraphQL::addSchema('default', [
             'query' => [
-                'login' => LoginQuery::class,
             ],
             'mutation' => [
+                'loginUser' => LoginUserMutation::class,
             ]
         ]);
     }

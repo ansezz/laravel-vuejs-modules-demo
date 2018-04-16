@@ -114,7 +114,7 @@ class UserServiceProvider extends ServiceProvider
 
     public function registerGraphql()
     {
-        $this->app->register(GraphQLServiceProvider::class);
+        $this->app->register(UserGraphQLServiceProvider::class);
     }
 
     /**

@@ -65,7 +65,7 @@ return [
      */
     'middleware_schema' => [
         'default' => [],
-        'auth:api' => [],
+        'auth' => ['auth:api'],
     ],
 
     /*
@@ -77,7 +77,7 @@ return [
      * Any JSON encoding options when returning a response from the default controller
      * See http://php.net/manual/function.json-encode.php for the full list of options
      */
-    'json_encoding_options' => 0,
+    'json_encoding_options' => 1,
 
     /*
      * Config for GraphiQL (see (https://github.com/graphql/graphiql).

@@ -6,7 +6,9 @@ import {Platform} from 'quasar'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  state: {leftDrawerOpen: Platform.is.desktop},
+  state: {
+    leftDrawerOpen: Platform.is.desktop
+  },
   mutations: {
     toggleLeftDrawer (state) {
       // mutate state
