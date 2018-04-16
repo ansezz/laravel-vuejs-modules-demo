@@ -31,15 +31,12 @@
 </style>
 
 <script>
-  import {mapActions} from 'vuex'
+  //  import {mapActions} from 'vuex'
 
   export default {
     name: 'PageIndex',
     mounted () {
-      this.setLogged()
     },
-    methods: {
-      ...mapActions(['setLogged'])
-    }
+    methods: {}
   }
 </script>

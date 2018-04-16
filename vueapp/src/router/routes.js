@@ -7,7 +7,12 @@ let routes = [
     meta: {layout: 'admin', requiresAuth: true},
     component: () => import('layouts/admin'),
     children: [
-      {path: '', name: 'admin.index', component: () => import('pages/index')}
+      {
+        path: '',
+        name: 'admin.index',
+        component: () => import('pages/index'),
+        meta: {requiresAuth: true}
+      }
     ]
   },
   { // Always leave this as last one

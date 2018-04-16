@@ -1,7 +1,6 @@
 import _ from 'lodash'
 
 const moduleFolder = 'Modules'
-const vueAppFolder = 'VueModule'
 /*
 *Modules list
 */
@@ -10,7 +9,7 @@ const Modules = require('./../modules')
 let routesModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
-    let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/router/routes.js'
+    let filePath = './' + moduleFolder + '/' + module.folder + '/router/routes.js'
     let obj = require(`${filePath}`)
     if (!module.layout) {
       module.layout = 'default'
@@ -25,7 +24,7 @@ _.forEach(Modules, function (module) {
 let i18nModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
-    let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/i18n/index.js'
+    let filePath = './' + moduleFolder + '/' + module.folder + '/i18n/index.js'
     let obj = require(`${filePath}`)
     _.forEach(obj.default, function (item, lang) {
       if (!i18nModules[lang]) {
@@ -39,7 +38,7 @@ _.forEach(Modules, function (module) {
 let storeModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
-    let filePath = './' + moduleFolder + '/' + module.folder + '/' + vueAppFolder + '/store/index.js'
+    let filePath = './' + moduleFolder + '/' + module.folder + '/store/index.js'
     let obj = require(`${filePath}`)
     storeModules[module.name.toLowerCase()] = obj.default
   }
