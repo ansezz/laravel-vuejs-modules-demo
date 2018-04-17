@@ -6,6 +6,7 @@ use GraphQL;
 use Illuminate\Support\ServiceProvider;
 use Modules\User\GraphQL\Mutation\CreateUserMutation;
 use Modules\User\GraphQL\Mutation\LoginUserMutation;
+use Modules\User\GraphQL\Query\ProfileQuery;
 use Modules\User\GraphQL\Query\UsersQuery;
 use Modules\User\GraphQL\Type\UserType;
 
@@ -32,7 +33,8 @@ class UserGraphQLServiceProvider extends ServiceProvider
 
         GraphQL::addSchema('auth', [
             'query' => [
-                'users' => UsersQuery::class
+                'profile' => ProfileQuery::class,
+                'users' => UsersQuery::class,
             ],
             'mutation' => [
                 'createUser' => CreateUserMutation::class

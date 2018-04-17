@@ -27,6 +27,16 @@
           "user-agent": "JS GraphQL"
         }
       }
+    },
+    {
+      "name": "Default (http://fundev.xx/graphql/auth)",
+      "url": "http://fundev.xx/graphql/auth",
+      "options": {
+        "headers": {
+          "user-agent": "JS GraphQL",
+          "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImU5MzIxYTBkZWM4NmI0MjYxNmY3ZjJlNjU3MGQyMzIyYzNmNDMzMjQ2ODQwYmJjNmRiZjczNDFlMWJhYjZjNDk5MzIwOTA5ZWUxZWMyOGU3In0.eyJhdWQiOiI0IiwianRpIjoiZTkzMjFhMGRlYzg2YjQyNjE2ZjdmMmU2NTcwZDIzMjJjM2Y0MzMyNDY4NDBiYmM2ZGJmNzM0MWUxYmFiNmM0OTkzMjA5MDllZTFlYzI4ZTciLCJpYXQiOjE1MjM5MTYyOTgsIm5iZiI6MTUyMzkxNjI5OCwiZXhwIjoxNTU1NDUyMjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.YU6UID4Y7FatTUtvSEFcTX0UZrx00YJLzoeVXS8wpqm1MgQqCkN-MmzSOjTxR2PGFvcdl78TXYA4LDfKito3MwSgdZQd3E3i1pFqCAcaGL4GTW2icZEhR6wn66I6BChV5epz-czuSimjjA6Pb7sfQYhAjmXf4DkXxP_cEBx5socnwxoB3Ky2nBg09XJRZuMaGbhWXDJq5Zm18LkWlBKt5j15hkfxk-c9My7qWUYegybwf5_5zPG5LFkshHPs85HzKWLyhHdKxix_FSCBsIhAKEDLcSionH7KohHdEtKeZejciYGrXJh686aHMNJdjQ5An9x4aHRQOvgv3JfqfHX5QAS9h9bbVOi3OAHdz3bgGZ3GbNjGixMbMiAc31PYN0n9-QKNWw9kyip8Uf4PNUByyYA6sqkGHdn4xerPoIw73eao33jUfaDNYG6KttwOmKVgWX4TTUzvBu4qIOBMOdzlFFwpgTmAu1iL4xd2mFPI_tN2ynBOyXJY8KN4tdMlu-K4FnKg3Cv3qpqRrOZKLE_aiNvXK8JGa89PM5xgELXgTdB7e9MOg3ng-SDf97nZmR4JElMScCLQvMQ03QPDmwusdsxDnrjm9L-NpobjRCKZXbHTWZiYMII06wxqTFx2L8DgxlFyzu5H7IHXaL98piRswUn2sr8CVnQ4z1P4iC_Z4GE"
+        }
+      }
     }
   ]
 }
