@@ -11,7 +11,8 @@ module.exports = function (ctx) {
     plugins: [
       'i18n',
       'axios',
-      'apollo'
+      'apollo',
+      'vuelidate'
     ],
     css: [
       'app.styl'
@@ -136,7 +137,16 @@ module.exports = function (ctx) {
         'QItemMain',
         'QItemSide',
         'QInput',
-        'QCheckbox'
+        'QCheckbox',
+        'QSpinner',
+        'QSpinnerMat',
+        'QInnerLoading',
+        'QCard',
+        'QCardTitle',
+        'QCardMain',
+        'QCardMedia',
+        'QCardSeparator',
+        'QCardActions'
       ],
       directives: [
         'Ripple'
@@ -147,7 +157,10 @@ module.exports = function (ctx) {
       ]
     },
     // animations: 'all' --- includes all animations
-    animations: [],
+    animations: [
+      'bounceInLeft',
+      'bounceOutRight'
+    ],
     pwa: {
       cacheExt: 'js,html,css,ttf,eot,otf,woff,woff2,json,svg,gif,jpg,jpeg,png,wav,ogg,webm,flac,aac,mp4,mp3',
       manifest: {

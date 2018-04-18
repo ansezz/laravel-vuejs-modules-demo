@@ -7,7 +7,6 @@ const beforeEach = (to, from, next) => {
   /**
    * If route doesn't require authentication be normally accessed.
    */
-  console.log(to)
   if (!needAuth(auth)) {
     if (to.name === 'auth.login' && store.state.users.isLogged) {
       next({name: 'admin.index'})

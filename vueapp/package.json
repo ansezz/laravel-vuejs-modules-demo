@@ -24,7 +24,8 @@
     "vue-apollo": "^3.0.0-beta.5",
     "vue-i18n": "^7.3.3",
     "vue-loader": "^14.2.2",
-    "vue-server-renderer": "^2.5.16"
+    "vue-server-renderer": "^2.5.16",
+    "vuelidate": "^0.6.2"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.40",

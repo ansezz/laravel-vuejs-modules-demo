@@ -34,9 +34,10 @@ class CreateUserMutation extends Mutation
     {
         return [
             'email' => 'required|email|unique:users',
+            'login' => 'required|unique:users',
             'name' => 'required|min:2',
+            'url' => 'url',
             'display_name' => 'required|min:2',
-            'login' => 'required|min:2',
             'password' => 'required|min:6'
         ];
     }
@@ -48,12 +49,15 @@ class CreateUserMutation extends Mutation
             'email' => ['name' => 'email', 'type' => Type::string()],
             'login' => ['name' => 'login', 'type' => Type::string()],
             'display_name' => ['name' => 'display_name', 'type' => Type::string()],
-            'password' => ['name' => 'password', 'type' => Type::string()]
+            'password' => ['name' => 'password', 'type' => Type::string()],
+            'url' => ['name' => 'url', 'type' => Type::string()],
+            'status' => ['name' => 'status', 'type' => Type::boolean()],
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
+        $args['password'] = bcrypt($args['password']);
         return $this->repository->create($args);
     }
 
