@@ -77,9 +77,10 @@ module.exports = function (ctx) {
           ...cfg.resolve.alias, // This adds the existing alias
           // Add you own alias like this
           modules: path.resolve(__dirname, './src/Modules'),
+          mixins: path.resolve(__dirname, './src/mixins'),
           '@': resolve('src')
         }
-        // console.log(cfg.resolve.alias)
+        console.log(cfg.resolve.alias)
         /* cfg.module.rules.push({
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
@@ -146,7 +147,8 @@ module.exports = function (ctx) {
         'QCardMain',
         'QCardMedia',
         'QCardSeparator',
-        'QCardActions'
+        'QCardActions',
+        'QAlert'
       ],
       directives: [
         'Ripple'

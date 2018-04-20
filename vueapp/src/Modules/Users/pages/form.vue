@@ -1,47 +1,53 @@
 <template>
   <div>
-    <form @submit.prevent="sendSubmit">
+    <form @submit.prevent="submit">
       <header>
+        <h4>{{title}}</h4>
         <slot name="header"></slot>
       </header>
+      <form-error :errors="errors"></form-error>
       <div>
         <q-input
-          v-model="user.email"
+          v-model="model.email"
           type="email"
           stack-label="Type your Email"
-          :error="$v.user.email.$error"
+          :error="$v.model.email.$error"
         ></q-input>
         <q-input
-          v-model="user.login"
+          v-model="model.login"
           type="text"
           stack-label="Login"
-          :error="$v.user.login.$error"
+          :error="$v.model.login.$error"
         ></q-input>
         <q-input
-          v-model="user.password"
+          v-model="model.password"
           type="password"
           float-label="Password"
-          :error="$v.user.password.$error"
+          :error="$v.model.password.$error"
         ></q-input>
-        <q-checkbox v-model="user.status" label="Status"></q-checkbox>
+        <q-checkbox v-model="model.status" label="Status"></q-checkbox>
         <q-input
-          v-model="user.name"
+          v-model="model.name"
           type="text"
           stack-label="Name"
-          :error="$v.user.name.$error"
+          :error="$v.model.name.$error"
         ></q-input>
         <q-input
-          v-model="user.display_name"
+          v-model="model.display_name"
           type="text"
           stack-label="Display name"
-          :error="$v.user.display_name.$error"
+          :error="$v.model.display_name.$error"
         ></q-input>
-        <q-input v-model="user.url" type="url" stack-label="Website"></q-input>
+        <q-input v-model="model.url" type="url" stack-label="Website"></q-input>
         <q-btn color="primary" label="create" type="submit"></q-btn>
       </div>
       <footer>
         <slot name="footer"></slot>
       </footer>
+
+      <q-inner-loading :visible="loading">
+        <q-spinner-mat size="50px" color="primary"></q-spinner-mat>
+      </q-inner-loading>
     </form>
   </div>
 </template>
@@ -51,28 +57,38 @@
 
 <script>
   import {required, email, minLength} from 'vuelidate/lib/validators'
+  import formMixins from 'mixins/form'
+  import formError from 'components/formErrors'
 
   export default {
     name: 'form-user',
-    props: ['user', 'submit'],
+    mixins: [formMixins],
+    components: {
+      formError
+    },
     validations: {
-      user: {
-        email: {required, email},
+      model: {
+        email: {
+          required,
+          email,
+          unique: function () {
+            return this.checkValidation('email')
+          }
+        },
         name: {required},
         password: {required, minLength: minLength(6)},
-        login: {required},
+        login: {
+          required,
+          unique: function () {
+            return this.checkValidation('login')
+          }
+        },
         display_name: {required}
       }
     },
-    methods: {
-      sendSubmit () {
-        this.$v.user.$touch()
-        if (this.$v.user.$error) {
-          this.$q.notify('Please review fields again.')
-          return
-        }
-        this.submit()
-      }
-    }
+    created () {
+      this.redirectTo = '/admin/users'
+    },
+    methods: {}
   }
 </script>
