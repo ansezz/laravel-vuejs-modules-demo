@@ -6,6 +6,9 @@ const moduleFolder = 'Modules'
 */
 const Modules = require('./../modules')
 
+/*
+* import routes modules
+*/
 let routesModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
@@ -21,6 +24,9 @@ _.forEach(Modules, function (module) {
   }
 })
 
+/*
+* import i18n modules
+*/
 let i18nModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
@@ -35,6 +41,9 @@ _.forEach(Modules, function (module) {
   }
 })
 
+/*
+* import store modules
+*/
 let storeModules = []
 _.forEach(Modules, function (module) {
   if (module.enabled) {
